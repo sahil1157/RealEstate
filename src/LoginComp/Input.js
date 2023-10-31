@@ -27,7 +27,6 @@ const Input = ({name}) => {
 
         }),
         onSubmit: (values) => {
-            alert("Your infos are printed at console")
             console.log(values)
         }
     })
@@ -47,7 +46,7 @@ const Input = ({name}) => {
 
                             <form onSubmit={formik.handleSubmit} className='flex flex-col gap-7' action="">
                                 <div>
-                                    <input
+                                  <input
                                         type='text'
                                         onChange={formik.handleChange}
                                         name='name'

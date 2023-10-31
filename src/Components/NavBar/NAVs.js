@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Navigation from './Navigation'
+import Navigation from './Navigation.js'
 import Buy from '../Pages/buy'
 import Sell from '../Pages/Sell'
 import HomeLoan from '../Pages/HomeLoan'

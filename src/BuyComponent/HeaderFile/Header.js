@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../Components/logos/estate-removebg-preview.png'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
 import { NavLink, useNavigate } from 'react-router-dom'
@@ -26,8 +26,22 @@ const Header = (HeaderProp) => {
     };
 
 
+    const bodyStyle = document.body.style;
+    const [isLocked, setisLocked] = useState(
+        bodyStyle.overFlowY === 'hidden'
+    )
+
+    useEffect(() => {
+        bodyStyle.overflow = isLocked ? 'hidden' : 'auto'
+    },[isLocked, bodyStyle])
+
+    const Toggle = () =>{
+        setisLocked(!isLocked)
+    }
+
+
     return (
-        <div className=''>
+        <div>
             <div className=' justify-center flex items-center mx-auto'>
                 <img src={HeaderProp.img} alt="" className='relative h-[800px] w-full object-cover' />
                 <div className='absolute text-center justify-center'>
@@ -39,7 +53,7 @@ const Header = (HeaderProp) => {
                 <div className=' flex flex-row lg:justify-evenly justify-between px-10 lg:px-0 '>
                     <div className='flex'>
                         <div className='pt-3'>
-                            <img onClick={Homepage} src={logo} alt="" className=' cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
+                            <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
                         </div>
                     </div>
                     <div className='pt-4 hidden lg:flex text-white'>
@@ -75,15 +89,15 @@ const Header = (HeaderProp) => {
                             </div>
                         </>
                     </div>
-                    <div id="btn" className='pt-4 cursor-pointer text-white lg:hidden'>
+                    <div onClick={Toggle} id="btn" className='pt-4 text-white lg:hidden'>
                         <RxHamburgerMenu className='' onClick={openSlider} size={30} />
                     </div>
                     {/*  */}
                 </div>
                 <div className=''>
-                    <div style={{ zIndex: '20' }} id="overlay" class="overlay hidden" className={`fixed ${slider ? 'block ' : 'hidden'} right-0 overflow-y-scroll top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
-                        <div className=' p-4 pt-5'>
-                            <RxCross1 size={25} className=' cursor-pointer' onClick={openSlider} />
+                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden h-screen lg:hidden bg-white `}>
+                        <div onClick={Toggle} className=' p-4 pt-5'>
+                            <RxCross1 size={25} className='' onClick={openSlider} />
                         </div>
                         <div className=''>
                             <ul className='pt-11 p-4 text-black transition-all duration-100 delay-100 grid grid-cols-1 ' >

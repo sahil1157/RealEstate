@@ -1,6 +1,5 @@
 
-import React, { useState } from 'react'
-// import logo from '../logos/Screen-Shot-2022-07-18-at-10.32 1.png';
+import React, { useEffect, useState } from 'react'
 import logo from '../logos/estate-removebg-preview.png'
 import img from '../images/Hero-img.png';
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
@@ -22,6 +21,20 @@ import SeacrchThePrice from './SeacrchThePrice';
 
 const Navigation = () => {
 
+  const Bodystyle = document.body.style
+  const [isLocked, setisLocked] = useState(
+    Bodystyle.overflowY === 'hidden'
+  )
+
+  useEffect(() => {
+    Bodystyle.overflow = isLocked ? 'hidden' : 'auto'
+  }, [isLocked, Bodystyle])
+
+  const Toggle = () => {
+    setisLocked(!isLocked)
+    return [isLocked, Toggle]
+  }
+
   const NavsMap = [
     {
       name: 'Property',
@@ -40,7 +53,7 @@ const Navigation = () => {
     },
     {
       name: 'Home Loans',
-      to: '/property',
+      to: '/homeloan',
       className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
     },
     {
@@ -50,12 +63,12 @@ const Navigation = () => {
     },
     {
       name: 'About Us',
-      to: '/advertise',
+      to: '/about',
       className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
     },
     {
       name: 'Blogs',
-      to: '/advertise',
+      to: '/blog',
       className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
     },
     {
@@ -72,17 +85,13 @@ const Navigation = () => {
     navigate('./')
   }
 
-  const Redirect = () => {
-    navigate('./Profile')
-  }
-
   const [slider, setSlider] = useState(false);
   const openSlider = () => {
     setSlider(!slider);
   };
 
   return (
-    <div className=''>
+    <div>
       {/*  */}
       <div className=' '>
         <img src={img} alt="" className='relative w-full h-[838px] object-cover' />
@@ -92,7 +101,7 @@ const Navigation = () => {
         <div className=' flex flex-row lg:justify-evenly justify-between px-10 lg:px-0 '>
           <div className='flex'>
             <div className='pt-3'>
-              <img onClick={Homepage} src={logo} alt="" className=' cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
+              <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
             </div>
           </div>
           <div className='pt-4 hidden lg:flex text-white'>
@@ -118,14 +127,14 @@ const Navigation = () => {
               </ul>
             </nav>
           </div>
-          <div className='pt-4 cursor-pointer text-white lg:hidden'>
+          <div onClick={Toggle}  className='pt-4 lg:cursor-pointer text-white lg:hidden'>
             <RxHamburgerMenu className='' onClick={openSlider} size={30} />
           </div>
           {/*  */}
         </div>
         <div className=''>
-          <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'block ' : 'hidden'} right-0 overflow-x-hidden overflow-y-hidden top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
-            <div className=' p-4 pt-5'>
+          <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 overflow-x-hidden top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
+            <div onClick={Toggle} className=' p-4 pt-5'>
               <RxCross1 size={25} className=' cursor-pointer' onClick={openSlider} />
             </div>
             <div className='p-6'>
