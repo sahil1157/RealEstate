@@ -8,7 +8,6 @@ const Slider1 = () => {
   return (
     <div className='w-[50%] pt-10'>
       <div className='items-center text-center justify-center flex flex-col mx-auto'>
-          {/* <Avatar1 /> */}
         </div>
     </div>
   )

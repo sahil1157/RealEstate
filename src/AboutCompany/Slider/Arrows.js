@@ -4,7 +4,6 @@ import { IoIosArrowDroprightCircle } from 'react-icons/io'
 
 const Arrows = ({prev , next}) => {
 
-
   console.log(prev)
   return (
     <div>

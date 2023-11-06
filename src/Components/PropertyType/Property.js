@@ -8,7 +8,7 @@ import card4 from '../NavBar/CardTye/CARD 4- TYPE.png'
 const Property = () => {
   return (
     
-      <div style={{ paddingInline: '8%' }} className='-mt-16 md:-mt-0'>
+      <div style={{ paddingInline: '8%' }} className='-mt-24 md:-mt-0'>
         <div>
           <div className=' '>
             <div className='mx-auto justify-center items-center flex '>

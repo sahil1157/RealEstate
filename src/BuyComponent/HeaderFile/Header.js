@@ -43,7 +43,7 @@ const Header = (HeaderProp) => {
     return (
         <div>
             <div className=' justify-center flex items-center mx-auto'>
-                <img src={HeaderProp.img} alt="" className='relative h-[800px] w-full object-cover' />
+                <img src={HeaderProp.img} alt="" className='m-0 w-full object-fit md:object-cover md:h-[750px] h-[500px] bg-center' />
                 <div className='absolute text-center justify-center'>
                     <TextInImage {...HeaderProp} />
                 </div>

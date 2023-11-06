@@ -7,11 +7,9 @@ const HeaderProps = () => {
 
 
     const HeaderProp = {
-    img,
+        img,
         name: 'Buy Properties'
     }
-
-    console.log("Iimage" ,HeaderProp.img)
 
     return (
         <div>

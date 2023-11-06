@@ -1,5 +1,4 @@
 import React from 'react'
-import Ind from '../../Components/PropertyContainer/Ind'
 
 const ArrySearch = ({ dataArray }) => {
 
@@ -30,17 +29,6 @@ const ArrySearch = ({ dataArray }) => {
 
 
                 </select>
-            </div>
-
-            <div className=' pt- grid xl:grid-cols-2 gap-9 flex-wrap md:flex lg:flex sm:grid-cols-2 justify-center lg:justify-end md:flex-wrap'>
-
-                {
-                    dataArray.map((i) => {
-                        return (
-                            <Ind item={i} />
-                        )
-                    })
-                }
             </div>
         </div>
     )

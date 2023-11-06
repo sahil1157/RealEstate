@@ -3,11 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { Avatar } from '@material-ui/core';
-import { BiSolidRightArrowSquare } from 'react-icons/bi'
-import { BiSolidLeftArrowSquare } from 'react-icons/bi'
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import '../../App.css'
 
 const SliderFirst = () => {
-
 
   const settings = {
     dots: true,
@@ -16,14 +15,13 @@ const SliderFirst = () => {
     slidesToShow: 1,
     fade: false,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: '1000',
-    prevArrow: <BiSolidLeftArrowSquare />,
-    nextArrow: <BiSolidRightArrowSquare />
+    prevArrow: <BsArrowLeft />,
+    nextArrow: <BsArrowRight />
   };
 
-  // const [Curr, setCurr] = useState(0)
 
   const [Slides] = useState([
 
@@ -57,8 +55,7 @@ const SliderFirst = () => {
 
   return (
 
-
-    <div className='pt-10 cursor-pointer justify-center'>
+    <div className='pt-10 lg:cursor-pointer justify-center'>
 
       <div className=''>
         <Slider {...settings}>
@@ -82,34 +79,7 @@ const SliderFirst = () => {
           }
         </Slider>
       </div>
-      {/* <Arrows /> */}
     </div>
-
-
-
-
-
-
-
-    // <div className='flex w-full'>
-
-    //   <div>
-    //     <div className='box-border border-2 border-black w-[100vw] min-h-[460px]'>
-    //       heyy
-    //     </div>
-    //   </div>
-    //   <div>
-    //     <div className='box-border border-2 border-black w-[100vw] min-h-[460px]'>
-    //       heyy
-    //     </div>
-    //   </div>
-    // </div>
-
-
-
-
-
-
   )
 }
 

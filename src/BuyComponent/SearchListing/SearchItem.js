@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import SearchProp from './SearchProp'
+import { dataAarray } from '../../Components/Popular/Datas'
+import Ind from '../../Components/PropertyContainer/Ind'
+import ArrySearch from './ArrySearch'
 
 const SearchItem = () => {
 
@@ -16,7 +18,7 @@ const SearchItem = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setDetails ((prev) => {
+        setDetails((prev) => {
             return { ...prev, [name]: value }
         })
     }
@@ -28,15 +30,15 @@ const SearchItem = () => {
     }
 
     const CLicked = () => {
-    alert('Your details are printed at Console, Take a Look...')
-    console.log(details)
+        alert('Your details are printed at Console, Take a Look...')
+        console.log(details)
     }
 
 
 
     return (
 
-        <div style={{ paddingInline: '4%' }} className=' pt-8 md:gap-6 flex-col md:flex-row justify-center flex lg:flex-row lg:justify-evenly '>
+        <div style={{ paddingInline: '4%' }} className=' pt-8 md:gap-6 flex-col md:flex-row justify-center flex lg:justify-between '>
             <div className='justify-center flex text-center md:justify-start '>
                 <div>
                     <div className='rounded-lg box-border md:min-w-[420px] min-w-full h-fit bg-[#D9D9D966]'>
@@ -63,8 +65,20 @@ const SearchItem = () => {
                     </div>
                 </div>
             </div>
-            <SearchProp />
-
+            {/* <SearchProp /> */}
+            {/* <Buildings/> */}
+            <div>
+                <ArrySearch />
+                <div className='xs:flex xs:flex-wrap justify-center mx-0 grid sm:grid-cols-2 md:grid-cols-1 ms:grid lg:grid lg:grid-cols-2 gap-12'>
+                    {
+                        dataAarray.map((i) => {
+                            return (
+                                <Ind item={i} />
+                            )
+                        })
+                    }
+                </div>
+            </div>
         </div>
 
     )

@@ -5,14 +5,24 @@ const HousingInfo = () => {
 
     const features = [
         {
+
+            id: 1,
+            RouteName: 'Budhanilkantha-area',
+            name: 'Lavish bungalow on sale at Budhanilkantha, Buddha Colony ......ReadMore ',
             img: '/PropImg/Rectangle110.png',
             Date: 'October 23, 2023'
         },
         {
+            id: 2,
+            RouteName: 'dhapasimarga-area',
+            name: 'Lavish House on sale at Tokha area, dhapasimarga colony....ReadMore',
             img: '/PropImg/Rectangle111.png',
             Date: 'November 23, 2023'
         },
         {
+            id: 3,
+            RouteName: 'machapokhari-area',
+            name: 'Lavish House on sale at Gongabu area, Bgmall near machapokhari....ReadMore',
             img: '/PropImg/Rectangle 112.png',
             Date: 'October 23, 2025'
         },

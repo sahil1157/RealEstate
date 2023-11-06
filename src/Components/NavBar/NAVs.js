@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navigation from './Navigation.js'
 import Buy from '../Pages/buy'
 import Sell from '../Pages/Sell'
@@ -14,25 +14,32 @@ import Login from '../Pages/Login'
 import Blog from '../Pages/Blogs'
 
 const NAVs = () => {
+
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(20, 0)
+  }, [pathname])
   return (
-    <>
+    <div className=''>
       <Routes>
         <Route path='/' element={<Navigation />} />
         {/* <Route path='stp' element={<SeacrchThePrice />} /> */}
         <Route path='/buy' element={<Buy />} />
-        <Route path='/property' element={<PropertyNav />} />
-        <Route path='/sell' element={<Sell/>} />
+        <Route path='/property/' element={<PropertyNav />} />
+        <Route path='/property/:itemName' element={<PropertyNav />} />
+        <Route path='/sell' element={<Sell />} />
         <Route path='/homeloan' element={<HomeLoan />} />
         <Route path='/advertise' element={<Advertise />} />
         <Route path='/development' element={<DevelopmentProject />} />
+        <Route path='/development/:developmentId' element={<DevelopmentProject />} />
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/blog' element={<Blog />} />
-        
+
       </Routes>
-    </>
+    </div>
   )
 }
 

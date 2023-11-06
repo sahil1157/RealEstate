@@ -9,7 +9,7 @@ const SeacrchThePrice = () => {
     return (
         <>
             <div>
-                <div style={{ paddingInline: '18%' }} className=' md:-translate-y-20 -translate-y-40 lg:-translate-y-20'>
+                <div style={{ paddingInline: '18%' }} className=' md:-translate-y-20 -translate-y-48 lg:-translate-y-20'>
                     <div className='items-center justify-center mx-0'>
                         <div className='  box-border shadow-lg bg-white p-8 rounded-md min-h-[150px] '>
                             <div className=' flex flex-col font-Oldenburg  '>

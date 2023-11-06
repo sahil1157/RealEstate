@@ -7,7 +7,7 @@ const PropertyContainer = ({dataArray}) => {
     <>
     <div className='pt-6 flex items-center gap-5 md:grid md:grid-cols-2 flex-col justify-center lg:justify-between flex-wrap lg:flex lg:flex-row'>
       {
-        dataArray.map((i)=>{
+        dataArray.slice(0,3).map((i)=>{
             return(
                 <Ind item = {i}/>
             )

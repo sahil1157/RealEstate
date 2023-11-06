@@ -14,7 +14,7 @@ const PopularProps = ({naam,Residences,Explore}) => {
                 </div>
                 <div className=' pt-12 md:pt-4 flex flex-col mx-0 justify-center items-center md:flex-row md:justify-between'>
                     <h1 className=' font-[open sans] text-2xl flex-wrap lg:text-4xl'>{Residences}</h1>
-                    <div className=' cursor-pointer flex flex-row gap-2 pt-8 md:pt-0'>
+                    <div className=' lg:cursor-pointer flex flex-row gap-2 pt-8 md:pt-0'>
                         <h1 className=' font-[Oldenburg] font-medium'>{Explore}</h1>
                         <span><GoArrowRight size={28} /></span>
                     </div>
