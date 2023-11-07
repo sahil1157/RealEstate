@@ -10,7 +10,7 @@ const Ind = ({ item }) => {
             <Link to={`/property/ ${item.id}`}>
                 <div className='pt-8'>
                     <div>
-                        <div className='hover:shadow-gray-400 bg-white cursor-auto md:cursor-pointer box-border min-h-[360px] max-w-[350px] rounded-xl lg:h-[350px] border-[1px] border-[#0000001F] shadow-lg'>
+                        <div className='hover:shadow-gray-400 bg-white md:hover:scale-105 md:duration-500 md:cursor-pointer box-border min-h-[360px] max-w-[350px] rounded-xl lg:h-[350px] border-[1px] border-[#0000001F] shadow-lg'>
                             <div >
                                 <img className='w-[100%] h-[242px] rounded-xl object-cover' src={item.img} alt="" />
 
@@ -38,7 +38,8 @@ const Ind = ({ item }) => {
                             </div>
                         </div>
                     </div>
-                </div></Link>
+                </div>
+            </Link>
         </div>
     )
 }

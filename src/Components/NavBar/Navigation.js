@@ -5,7 +5,6 @@ import img from '../images/Hero-img.png';
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
 import TextOverImage from './TextOverImage';
 import { NavLink, useNavigate } from 'react-router-dom'
-import Property from '../PropertyType/Property'
 import PropertyByLocation from '../PropertyType/PropertyByLocation'
 import Location from '../PropertyType/Location'
 import PopularImgs from '../Popular/PopularImgs'
@@ -17,6 +16,7 @@ import HousingInfo from '../Featured/HousingInfo'
 import OurTeam from '../RealStateAgents/OurTeam'
 import TeamsOrg from '../RealStateAgents/TeamsOrg'
 import SeacrchThePrice from './SeacrchThePrice';
+import BuyHome from '../TypesOfProperty/BuyHome';
 
 
 const Navigation = () => {
@@ -133,7 +133,7 @@ const Navigation = () => {
           {/*  */}
         </div>
         <div className=''>
-          <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 overflow-x-hidden top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
+          <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} duration-700 right-0 overflow-x-hidden top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
             <div onClick={Toggle} className=' p-4 pt-5'>
               <RxCross1 size={25} className=' cursor-pointer' onClick={openSlider} />
             </div>
@@ -153,7 +153,8 @@ const Navigation = () => {
         <TextOverImage />
       </div >
       <SeacrchThePrice />
-      <Property />
+      <BuyHome/>
+      {/* <Property /> */}
       <PropertyByLocation />
       <Location />
       <PopularImgs />

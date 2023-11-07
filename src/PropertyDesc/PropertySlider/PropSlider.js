@@ -77,15 +77,15 @@ const PropSlider = () => {
                     dataItems ? (
                         <div className=''>
                             <Slider {...settings}>
-                                <img src={dataItems.homeImg} alt="" className='m-0 w-full object-cover md:h-screen h-[500px] bg-center' />
-                                <img src={dataItems.img1} alt="" className='m-0 w-full object-cover md:h-screen h-[500px] bg-center' />
-                                <img src={dataItems.img2} alt="" className='m-0 w-full object-cover md:h-screen h-[500px] bg-center' />
-                                <img src={dataItems.img3} alt="" className='m-0 w-full object-cover md:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.homeImg} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.img1} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.img2} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.img3} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
                             </Slider>
                         </div>
                     ) :
                         <div className='justify-center flex items-center mx-auto relative'>
-                            <img src={imgage} alt="" className='m-0 w-full object-cover md:h-full h-[500px] bg-center' />
+                            <img src={imgage} alt="" className='m-0 w-full object-cover md:full h-[800px] bg-center' />
                             <div className='absolute text-center justify-center'>
                                 <TextInImage {...HeaderProp} />
                             </div>

@@ -13,7 +13,6 @@ const Featured = () => {
     <div className=''>
       <div style={{paddingInline:'8%'}}>
         <PopularProps {...Featured}/>
-        
       </div>
 
       <Buildings />
