@@ -12,6 +12,7 @@ import PropertyNav from '../Pages/Property'
 import ContactUs from '../Pages/ContactUs'
 import Login from '../Pages/Login'
 import Blog from '../Pages/Blogs'
+import Saved from '../Pages/Saved.js'
 
 const NAVs = () => {
 
@@ -23,7 +24,6 @@ const NAVs = () => {
     <div className=''>
       <Routes>
         <Route path='/' element={<Navigation />} />
-        {/* <Route path='stp' element={<SeacrchThePrice />} /> */}
         <Route path='/buy' element={<Buy />} />
         <Route path='/property/' element={<PropertyNav />} />
         <Route path='/property/:itemName' element={<PropertyNav />} />
@@ -37,6 +37,7 @@ const NAVs = () => {
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/saved' element={<Saved />} />
 
       </Routes>
     </div>

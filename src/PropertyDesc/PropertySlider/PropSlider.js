@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../../Components/logos/estate-removebg-preview.png'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
-import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import '../../App.css'
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-import { dataAarray } from '../../Components/Popular/Datas';
 import imgage from '../../Components/Popular/images/realHeader.png'
 import TextInImage from '../../BuyComponent/HeaderFile/TextInImage';
+import { IoIosNotificationsOutline } from 'react-icons/io'
+import { GoBookmarkSlashFill } from "react-icons/go";
+import { GoBookmark } from "react-icons/go";
 
 const settings = {
     infinite: true,
@@ -24,8 +26,7 @@ const settings = {
 
 };
 
-
-const PropSlider = () => {
+const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
 
     const HeaderProp = {
         name: 'House photos'
@@ -46,6 +47,8 @@ const PropSlider = () => {
         navigate('/')
     }
 
+
+
     const [slider, setSlider] = useState(false);
     const openSlider = () => {
         setSlider(!slider);
@@ -65,23 +68,41 @@ const PropSlider = () => {
         setisLocked(!isLocked)
     }
 
-    let { itemName } = useParams();
+    // let { itemName } = useParams();
 
-    const dataItems = dataAarray.find((p) => p.id === Number(itemName))
+    // const dataItems = dataAarray.find((p) => p.id === Number(itemName))
+
+    const findItems = cart.find((i) => i.id === Number(dataItems.id))
+
 
     return (
         <>
 
-            <div className='overflow-x-hidden m-0'>
+            <div className='relative overflow-x-hidden m-0'>
+
                 {
                     dataItems ? (
-                        <div className=''>
+                        <div className='relative items-center mx-auto'>
                             <Slider {...settings}>
                                 <img src={dataItems.homeImg} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
                                 <img src={dataItems.img1} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
                                 <img src={dataItems.img2} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
                                 <img src={dataItems.img3} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
                             </Slider>
+
+                            <button onClick={() => setShow(false)} className='absolute flex mx-auto text-white left-2 bottom-7'>
+                                <IoIosNotificationsOutline className='relative flex' size={40} />
+                                <span className='absolute right-0 w-4 pt-[1px] lg:pt-0 h-4 bg-red-600  rounded-full top-0 text-white text-xs'>{cart.length}</span>
+                            </button>
+
+                            <div className='absolute lg:hover mx-auto lg:cursor-pointer text-white right-2 bottom-8 md:hover:text-gray-300'>
+                                {
+                                    findItems && findItems ? <GoBookmarkSlashFill onClick={() => handleClicked(dataItems)} size={37} />
+
+                                        : <GoBookmark onClick={() => handleClicked(dataItems)} size={37} />
+                                }
+                            </div>
+
                         </div>
                     ) :
                         <div className='justify-center flex items-center mx-auto relative'>
@@ -91,8 +112,9 @@ const PropSlider = () => {
                             </div>
                         </div>
                 }
-                <div className=' absolute left-0 right-0 top-0 pt-4 ' >
-                    <div className=' flex flex-row lg:justify-evenly justify-between px-10 lg:px-0 '>
+
+                <div className=' absolute left-0 right-3 top-0 pt-4 ' >
+                    <div className=' flex flex-row lg:justify-evenly justify-between '>
                         <div className='flex'>
                             <div className='pt-3'>
                                 <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
@@ -158,7 +180,6 @@ const PropSlider = () => {
                         </div>
                     </div>
                 </div >
-
             </div >
         </>
     )

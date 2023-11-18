@@ -8,7 +8,6 @@ const Buildings = () => {
     return (
         <div style={{ paddingInline: '8%' }} className=''>
             <PropertyContainer dataArray={dataAarray} />
-            {/* <PropSlider {...dataAarray} /> */}
 
         </div>
     )

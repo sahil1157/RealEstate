@@ -25,7 +25,7 @@ const Arrays = () => {
                                 </div>
                                 <div className=''>
                                     <div className='flex flex-col gap-3'>
-                                        <div className='max-w-[545px] flex items-center border-[1px] cursor-pointer rounded-b-2xl shadow-lg min-h-[25vh]'>
+                                        <div className='max-w-[545px] flex items-center border-[1px] cursor-pointer rounded-b-2xl shadow-lg min-h-[15vh]'>
                                             <div className='px-11 p-5 mt-14 sm:mt-8 md:mt-14 lg:mt-16 font-Oldenburg'>
                                                 <span className='text-2xl'>{i.name}</span>
                                                 <p className='text-lg text-[#00000080]'>{i.location}</p>

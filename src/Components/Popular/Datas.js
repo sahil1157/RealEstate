@@ -58,7 +58,7 @@ export const dataAarray = [
         img3: '/Houseimgs/amenties4/amenties-3.webp',
         id: 4,
         name: "Bunglow",
-        img: '/Bunglow.webp',
+        img: '/Houseimgs/amenties4/house1.jpg',
         loation: 'Pokhara, Nepal',
         bed: 3,
         Shower: 4,

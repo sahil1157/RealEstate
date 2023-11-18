@@ -49,8 +49,8 @@ const Header = (HeaderProp) => {
                 </div>
             </div>
             {/*  */}
-            <div className=' absolute left-0 right-0 top-0 pt-4 ' >
-                <div className=' flex flex-row lg:justify-evenly justify-between px-10 lg:px-0 '>
+            <div className='absolute left-0 right-3 top-0 pt-4 ' >
+                <div className=' flex flex-row lg:justify-evenly justify-between '>
                     <div className='flex'>
                         <div className='pt-3'>
                             <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
@@ -95,7 +95,7 @@ const Header = (HeaderProp) => {
                     {/*  */}
                 </div>
                 <div className=''>
-                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden h-screen lg:hidden bg-white `}>
+                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden lg:hidden bg-white `}>
                         <div onClick={Toggle} className=' p-4 pt-5'>
                             <RxCross1 size={25} className='' onClick={openSlider} />
                         </div>

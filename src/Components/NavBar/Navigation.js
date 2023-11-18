@@ -97,8 +97,8 @@ const Navigation = () => {
         <img src={img} alt="" className='relative w-full h-[838px] object-cover' />
       </div>
       {/*  */}
-      <div className='absolute left-0 right-0 top-0 pt-4 ' >
-        <div className=' flex flex-row lg:justify-evenly justify-between px-10 lg:px-0 '>
+      <div className='absolute left-0 right-3 top-0 pt-4 ' >
+        <div className=' flex flex-row lg:justify-evenly justify-between  '>
           <div className='flex'>
             <div className='pt-3'>
               <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
@@ -127,7 +127,7 @@ const Navigation = () => {
               </ul>
             </nav>
           </div>
-          <div onClick={Toggle}  className='pt-4 lg:cursor-pointer text-white lg:hidden'>
+          <div onClick={Toggle} className='pt-4 lg:cursor-pointer text-white lg:hidden'>
             <RxHamburgerMenu className='' onClick={openSlider} size={30} />
           </div>
           {/*  */}
@@ -153,7 +153,7 @@ const Navigation = () => {
         <TextOverImage />
       </div >
       <SeacrchThePrice />
-      <BuyHome/>
+      <BuyHome />
       {/* <Property /> */}
       <PropertyByLocation />
       <Location />
