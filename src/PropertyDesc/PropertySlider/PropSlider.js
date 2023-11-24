@@ -10,8 +10,7 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 import imgage from '../../Components/Popular/images/realHeader.png'
 import TextInImage from '../../BuyComponent/HeaderFile/TextInImage';
 import { IoIosNotificationsOutline } from 'react-icons/io'
-import { GoBookmarkSlashFill } from "react-icons/go";
-import { GoBookmark } from "react-icons/go";
+import { CiHeart } from "react-icons/ci";
 
 const settings = {
     infinite: true,
@@ -47,13 +46,10 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
         navigate('/')
     }
 
-
-
     const [slider, setSlider] = useState(false);
     const openSlider = () => {
         setSlider(!slider);
     };
-
 
     const bodyStyle = document.body.style;
     const [isLocked, setisLocked] = useState(
@@ -68,20 +64,13 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
         setisLocked(!isLocked)
     }
 
-    // let { itemName } = useParams();
-
-    // const dataItems = dataAarray.find((p) => p.id === Number(itemName))
-
-    const findItems = cart.find((i) => i.id === Number(dataItems.id))
-
-
     return (
         <>
 
             <div className='relative overflow-x-hidden m-0'>
 
                 {
-                    dataItems ? (
+                    dataItems && dataItems ? (
                         <div className='relative items-center mx-auto'>
                             <Slider {...settings}>
                                 <img src={dataItems.homeImg} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
@@ -96,15 +85,11 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                             </button>
 
                             <div className='absolute lg:hover mx-auto lg:cursor-pointer text-white right-2 bottom-8 md:hover:text-gray-300'>
-                                {
-                                    findItems && findItems ? <GoBookmarkSlashFill onClick={() => handleClicked(dataItems)} size={37} />
-
-                                        : <GoBookmark onClick={() => handleClicked(dataItems)} size={37} />
-                                }
+                                <CiHeart className='active:text-red-600 lg:cursor-pointer md:cursor-auto duration-200' size={37} onClick={() => handleClicked(cart)} />
                             </div>
-
                         </div>
-                    ) :
+                    )
+                        :
                         <div className='justify-center flex items-center mx-auto relative'>
                             <img src={imgage} alt="" className='m-0 w-full object-cover md:full h-[800px] bg-center' />
                             <div className='absolute text-center justify-center'>
@@ -113,23 +98,23 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                         </div>
                 }
 
-                <div className=' absolute left-0 right-3 top-0 pt-4 ' >
+                <div className=' absolute left-0 right-3 top-0 pt-4 text-white ' >
                     <div className=' flex flex-row lg:justify-evenly justify-between '>
                         <div className='flex'>
                             <div className='pt-3'>
                                 <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
                             </div>
                         </div>
-                        <div className='pt-4 hidden lg:flex text-white'>
+                        <div className='pt-4 hidden lg:flex'>
                             <nav>
                                 <ul className=' flex gap-10 '>
                                     {/*  */}
-                                    <NavLink to='/property/' className='' >properties</NavLink>
-                                    <NavLink to='/buy' className='cursor-pointer' >Buy</NavLink>
-                                    <NavLink to='/sell' className='cursor-pointer' >Sell</NavLink>
-                                    <NavLink to='/homeloan' className='cursor-pointer' >HomeLoan</NavLink>
-                                    <NavLink to='/advertise' className='cursor-pointer' >Advertise</NavLink>
-                                    <NavLink to='/development' className='cursor-pointer' >DevelopmentProjects</NavLink>
+                                    <NavLink to='/property/' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >properties</NavLink>
+                                    <NavLink to='/buy' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >Buy</NavLink>
+                                    <NavLink to='/sell' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >Sell</NavLink>
+                                    <NavLink to='/homeloan' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >HomeLoan</NavLink>
+                                    <NavLink to='/advertise' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >Advertise</NavLink>
+                                    <NavLink to='/development' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >DevelopmentProjects</NavLink>
                                 </ul>
                             </nav>
                         </div>
@@ -138,18 +123,18 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                             <>
                                 <div className=' text-white hidden lg:flex space-x-16'>
                                     <div onMouseEnter={onShowBtn} onMouseLeave={onHideBtn} className='relative'>
-                                        <p className='cursor-pointer'>More</p>
+                                        <p className='cursor-pointer hover:text-red-600 duration-75'>More</p>
                                         {
                                             state ? (
                                                 <div className='flex flex-col gap-3 absolute pt-4' onMouseEnter={onShowBtn}>
-                                                    <NavLink className='cursor-pointer hover:text-rose-600' to='/about'>AboutUs</NavLink>
-                                                    <NavLink className='cursor-pointer hover:text-rose-600' to='/blog'>Blogs</NavLink>
+                                                    <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/about'>AboutUs</NavLink>
+                                                    <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/blog'>Blogs</NavLink>
                                                 </div>
                                             ) : null
                                         }
                                     </div>
 
-                                    <NavLink className='cursor-pointer' to='/login'>LogIn</NavLink>
+                                    <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/login'>LogIn</NavLink>
                                 </div>
                             </>
                         </div>

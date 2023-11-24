@@ -3,6 +3,10 @@ import logo from '../../Components/logos/estate-removebg-preview.png'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
 import { NavLink, useNavigate } from 'react-router-dom'
 import TextInImage from './TextInImage';
+import { NavsMap } from '../../Components/NavBar/1stHeaderArray';
+import { NavsMap2 } from '../../Components/NavBar/NavMap';
+
+
 const Header = (HeaderProp) => {
 
     const [state, setState] = useState(false)
@@ -33,9 +37,9 @@ const Header = (HeaderProp) => {
 
     useEffect(() => {
         bodyStyle.overflow = isLocked ? 'hidden' : 'auto'
-    },[isLocked, bodyStyle])
+    }, [isLocked, bodyStyle])
 
-    const Toggle = () =>{
+    const Toggle = () => {
         setisLocked(!isLocked)
     }
 
@@ -56,18 +60,19 @@ const Header = (HeaderProp) => {
                             <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
                         </div>
                     </div>
-                    <div className='pt-4 hidden lg:flex text-white'>
-                        <nav>
-                            <ul className=' flex gap-10 '>
-                                {/*  */}
-                                <NavLink to='/property' className='' >properties</NavLink>
-                                <NavLink to='/buy' className='cursor-pointer' >Buy</NavLink>
-                                <NavLink to='/sell' className='cursor-pointer' >Sell</NavLink>
-                                <NavLink to='/homeloan' className='cursor-pointer' >HomeLoan</NavLink>
-                                <NavLink to='/advertise' className='cursor-pointer' >Advertise</NavLink>
-                                <NavLink to='/development' className='cursor-pointer' >DevelopmentProjects</NavLink>
-                            </ul>
-                        </nav>
+                    <div className='pt-4 hidden lg:flex flex-row gap-10 text-white'>
+                        {
+                            NavsMap.map((i) => {
+                                return (
+                                    <nav>
+                                        <ul className=' flex gap-10 '>
+                                            <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to={i.to} >{i.name}</NavLink>
+                                        </ul>
+                                    </nav>
+                                )
+                            })
+                        }
+
                     </div>
                     {/*  */}
                     <div className=' pt-4 '>
@@ -78,8 +83,8 @@ const Header = (HeaderProp) => {
                                     {
                                         state ? (
                                             <div className='flex flex-col gap-3 absolute pt-4' onMouseEnter={onShowBtn}>
-                                                <NavLink className='cursor-pointer hover:text-rose-600' to='/about'>AboutUs</NavLink>
-                                                <NavLink className='cursor-pointer hover:text-rose-600' to='/blog'>Blogs</NavLink>
+                                                <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/about'>AboutUs</NavLink>
+                                                <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/blog'>Blogs</NavLink>
                                             </div>
                                         ) : null
                                     }
@@ -95,23 +100,20 @@ const Header = (HeaderProp) => {
                     {/*  */}
                 </div>
                 <div className=''>
-                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden lg:hidden bg-white `}>
+                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden lg:hidden h-full bg-white `}>
                         <div onClick={Toggle} className=' p-4 pt-5'>
                             <RxCross1 size={25} className='' onClick={openSlider} />
                         </div>
-                        <div className=''>
-                            <ul className='pt-11 p-4 text-black transition-all duration-100 delay-100 grid grid-cols-1 ' >
-                                <NavLink to='/property' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >Properties</NavLink>
-                                <NavLink to='/buy' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >Buy</NavLink >
-                                <NavLink to='/sell' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>Sell</NavLink  >
-                                <NavLink to='/homeloan' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >HomeLoans</NavLink >
-                                <NavLink to='/advertise' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>Advertise</NavLink>
-                                <NavLink to='/development' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>DevelopmentProjects</NavLink>
-                                <NavLink to='/about' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>About Us</NavLink>
-                                <NavLink to='/blog' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>Our Blogs</NavLink>
-                                <NavLink to='/login' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>LogIn</NavLink>
-
-                            </ul>
+                        <div className='p-6'>
+                            {
+                                NavsMap2.map((i) => {
+                                    return (
+                                        <ul className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
+                                            <NavLink to={i.to} className={i.className} >{i.name}</NavLink>
+                                        </ul>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>

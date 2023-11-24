@@ -17,7 +17,8 @@ import OurTeam from '../RealStateAgents/OurTeam'
 import TeamsOrg from '../RealStateAgents/TeamsOrg'
 import SeacrchThePrice from './SeacrchThePrice';
 import BuyHome from '../TypesOfProperty/BuyHome';
-
+import { NavsMap } from './1stHeaderArray';
+import { NavsMap2 } from './NavMap';
 
 const Navigation = () => {
 
@@ -34,49 +35,6 @@ const Navigation = () => {
     setisLocked(!isLocked)
     return [isLocked, Toggle]
   }
-
-  const NavsMap = [
-    {
-      name: 'Property',
-      to: '/property',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'Buy',
-      to: '/buy',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'Sell',
-      to: '/sell',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'Home Loans',
-      to: '/homeloan',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'Advertise',
-      to: '/advertise',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'About Us',
-      to: '/about',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'Blogs',
-      to: '/blog',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-    {
-      name: 'Development',
-      to: '/development',
-      className: 'p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer',
-    },
-  ]
 
 
   const navigate = useNavigate()
@@ -98,31 +56,32 @@ const Navigation = () => {
       </div>
       {/*  */}
       <div className='absolute left-0 right-3 top-0 pt-4 ' >
-        <div className=' flex flex-row lg:justify-evenly justify-between  '>
+        <div className=' flex flex-row lg:justify-evenly gap-4 justify-between  '>
           <div className='flex'>
             <div className='pt-3'>
               <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
             </div>
           </div>
-          <div className='pt-4 hidden lg:flex text-white'>
-            <nav>
-              <ul className=' flex gap-10 '>
-                {/*  */}
-                <NavLink to='/property' className='cursor-pointer' >properties</NavLink>
-                <NavLink to='/buy' className='cursor-pointer' >Buy</NavLink>
-                <NavLink to='/sell' className='cursor-pointer' >Sell</NavLink>
-                <NavLink to='/homeloan' className='cursor-pointer' >HomeLoan</NavLink>
-                <NavLink to='/advertise' className='cursor-pointer' >Advertise</NavLink>
-                <NavLink to='/development' className='cursor-pointer' >DevelopmentProjects</NavLink>
-              </ul>
-            </nav>
+          <div className='pt-4 hidden lg:flex flex-row gap-10 text-white'>
+            {
+              NavsMap.map((i) => {
+                return (
+                  <nav>
+                    <ul className=' flex gap-10 '>
+                      <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to={i.to} >{i.name}</NavLink>
+                    </ul>
+                  </nav>
+                )
+              })
+            }
+
           </div>
           {/*  */}
           <div className=' pt-4 '>
             <nav>
               <ul className=' text-white hidden lg:flex space-x-12'>
-                <NavLink to='/about'>About</NavLink>
-                <NavLink to='/blog'>Blogs</NavLink>
+                <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/about'>About</NavLink>
+                <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/blog'>Blogs</NavLink>
                 {/* <CgProfile onClick={Redirect} className=' cursor-pointer w-[35px] h-[33px] rounded-full' /> */}
               </ul>
             </nav>
@@ -139,7 +98,7 @@ const Navigation = () => {
             </div>
             <div className='p-6'>
               {
-                NavsMap.map((i) => {
+                NavsMap2.map((i) => {
                   return (
                     <ul className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
                       <NavLink to={i.to} className={i.className} >{i.name}</NavLink>

@@ -15,13 +15,14 @@ const Header2 = () => {
     Explore: 'Explore All'
   }
 
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
+  let { itemName } = useParams();
+  const dataItems = dataAarray.find((p) => p.id === Number(itemName))
 
-  const showFromLocalStorage = JSON.parse(localStorage.getItem('show',) || '[]')
+  const dataFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
   const [cart, setCart] = useState(dataFromLocalStorage)
 
-  const handleClicked = (dataItems) => {
+  const handleClicked = (cart) => {
     if (cart.indexOf(dataItems) !== -1) {
       const remove = cart.filter((items) => items.id !== dataItems.id)
       setCart(remove)
@@ -39,22 +40,14 @@ const Header2 = () => {
     setCart(removeItems)
   }
 
-  const [show, setShow] = useState(showFromLocalStorage)
-  useEffect(() => {
-    window.localStorage.setItem('click', JSON.stringify(show))
-  }, [show])
+  const [show, setShow] = useState(true)
 
   const [isActive, setIsActive] = useState(false)
+
 
   const Toggle = () => {
     setIsActive(!isActive)
   }
-
-
-  let { itemName } = useParams();
-
-  const dataItems = dataAarray.find((p) => p.id === Number(itemName))
-
 
 
   return (
@@ -73,10 +66,7 @@ const Header2 = () => {
           </div>
         ) : <Comp1 cart={cart} handleDelete={handleDelete} setShow={setShow} />
       }
-
-
     </>
-
   )
 }
 

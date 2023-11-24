@@ -15,7 +15,7 @@ const Ind = ( {item} ) => {
             {/*  */}
             <Link to={`/property/ ${item.id}`}>
                 <div className='pt-4'>
-                    <div className=' lg:max-w-[300px] rounded-xl lg:h-[350px] hover:shadow-gray-400 bg-white box-border min-h-[360px] w-fit border-[1px] border-[#0000001F] shadow-lg'>
+                    <div className=' lg:max-w-[300px] rounded-xl lg:h-[350px] hover:shadow-gray-400 bg-white box-border min-h-[360px] w-full border-[1px] border-[#0000001F] shadow-lg'>
                         <div className='relative mx-auto justify-center'>
                             <Exclusive />
                             <img src={logo} className='w-14 h-8 absolute mx-auto text-white right-2 bottom-8 hover:text-slate-400' alt="" />

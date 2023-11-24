@@ -25,7 +25,7 @@ const NAVs = () => {
       <Routes>
         <Route path='/' element={<Navigation />} />
         <Route path='/buy' element={<Buy />} />
-        <Route path='/property/' element={<PropertyNav />} />
+        <Route path='/property' element={<PropertyNav />} />
         <Route path='/property/:itemName' element={<PropertyNav />} />
         <Route path='/sell' element={<Sell />} />
         <Route path='/homeloan' element={<HomeLoan />} />

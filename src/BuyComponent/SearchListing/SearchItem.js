@@ -46,7 +46,7 @@ const SearchItem = () => {
                             <input type="text" name='name' placeholder=' Provience eg.Bagmati,Gandaki' onChange={handleChange} className=' rounded-lg text-lg placeholder:flex-wrap outline-none p-5 bg-white md:w-full w-[70vw]  min-h-[74px]' />
 
                             <input type="text" name='city' placeholder='City eg.Kathmandu,Lalitpur' onChange={handleChange} className=' rounded-lg text-lg placeholder:flex-wrap bg-white outline-none p-5 md:w-full w-[70vw] min-h-[74px]' />
-                            <input type="text" name='type' placeholder=' Property Type' className=' rounded-lg text-lg placeholder:flex-wrap bg-white outline-none p-5 md:w-full w-[70vw]  min-h-[74px]' />
+                            <input type="text" name='type' placeholder=' Property Type' className=' rounded-lg text-lg bg-white outline-none p-5 md:w-full w-[70vw] min-h-[74px]' />
 
                             <input type="text" name='arearange' placeholder='Min Area Range' onChange={handleChange} className='rounded-lg text-lg placeholder:flex-wrap bg-white outline-none p-5 md:w-full w-[70vw] min-h-[74px]' />
                             <input type="text" name='maxarea' placeholder=' Max Area Range' onChange={handleChange} className=' rounded-lg text-lg placeholder:flex-wrap bg-white outline-none p-5 md:w-full w-[70vw]  min-h-[74px]' />
@@ -67,7 +67,7 @@ const SearchItem = () => {
             </div>
             {/* <SearchProp /> */}
             {/* <Buildings/> */}
-            <div>
+            <div className=''>
                 <ArrySearch />
                 <div className='xs:flex xs:flex-wrap justify-center mx-0 grid sm:grid-cols-2 md:grid-cols-1 ms:grid lg:grid lg:grid-cols-2 gap-12'>
                     {

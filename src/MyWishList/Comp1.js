@@ -2,7 +2,7 @@ import React from 'react'
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 
-const Comp1 = ({ cart, setShow, handleDelete, dataItems }) => {
+const Comp1 = ({ cart,setShow, handleDelete }) => {
 
   const navigate = useNavigate()
 
@@ -13,11 +13,11 @@ const Comp1 = ({ cart, setShow, handleDelete, dataItems }) => {
   return (
     <div style={{ paddingInline: '10%' }} className=''>
       <div className='pt-9'>
-        <p className='text-5xl font-Oldenburg'>My Favourites</p>
+        <p className='text-[2rem] font-Oldenburg'>My Favourites</p>
         {
           cart && cart.length === 0 ? (
             <div className='pt-6'>
-              <div className='box-border w-[40vw] bg-green-100 flex items-center h-[10vh] gap-3'>
+              <div className='box-border w-full bg-green-100 flex items-center gap-3'>
                 <p className='text-2xl text-green-800 font-Oldenburg p-3'>Nothing to show</p>
               </div>
             </div>
@@ -46,7 +46,7 @@ const Comp1 = ({ cart, setShow, handleDelete, dataItems }) => {
                       </div>
                     </div>
                   </div>
-                  <div className='flex flex-row p-2 md:flex-col gap-3 items-start justify-start mr-4'>
+                  <div className='flex flex-row p-[8px] md:flex-col gap-3 items-start justify-start mr-4'>
                     <button onClick={NavigateTo} className='w-[100px] h-[40px] rounded-lg bg-blue-600 text-white text-center'>Contact</button>
                     <button onClick={() => handleDelete(i.id)} className='w-[100px] h-[40px] rounded-lg bg-red-600 text-white text-center'>Remove</button>
                   </div>

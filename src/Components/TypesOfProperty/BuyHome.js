@@ -49,15 +49,15 @@ const BuyHome = () => {
                 {
                     BuyyHomeMap.map((i) => {
                         return (
-                            <div className='text-center box-border gap-6 border-gray-200 md:cursor-pointer border-[2px] rounded-md w-full min-h-[300px] md:h-52 flex flex-col justify-center items-center'>
+                            <div className='text-center box-border gap-6 group hover:border-blue-950 md:cursor-pointer border-[2px] rounded-md w-full min-h-[300px] md:h-52 flex flex-col justify-center items-center'>
                                 <div className='gap-1 flex flex-col'>
                                     <span className='flex justify-center text-[85px] text-blue-600'>{i.icons}</span>
                                     <p className='text-xl'>{i.name}</p>
                                     <h1 className='text-center mx-auto text-gray-600 w-[80%]'>{i.paragraph}</h1>
                                 </div>
                                 <Link to={i.onclick}>
-                                    <div className='relative md:cursor-pointer text-white hover:text-white lg:text-black'>
-                                        <button onclick={i.onclick} className='rounded-lg lg:w-[15vw] w-[70vw] md:w-[30vw] border-neutral-300 h-[50px] bg-blue-700 border-[1px] justify-center items-center gap-4 lg:bg-white flex flex-row lg:hover:bg-blue-700' >
+                                    <div className='relative md:cursor-pointer text-white rounded-lg bg-blue-700 lg:bg-transparent group-hover:text-white lg:text-black'>
+                                        <button onclick={i.onclick} className='rounded-lg lg:w-[15vw] w-[70vw] md:w-[30vw] border-neutral-300 h-[50px] border-[1px] justify-center  items-center gap-4 flex flex-row lg:group-hover:bg-blue-700' >
 
                                             {i.button}
                                             <BsArrowRight />
