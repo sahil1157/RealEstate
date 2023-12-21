@@ -3,12 +3,12 @@ import HeaderProps from '../../BuyComponent/Props/HeaderProps'
 import SearchItem from '../../BuyComponent/SearchListing/SearchItem'
 
 
-const Buy = () => {
-  
+const Buy = ({items}) => {
+
   return (
     <div>
        <HeaderProps/>
-            <SearchItem />
+            <SearchItem items = {items} />
     </div>
   )
 }

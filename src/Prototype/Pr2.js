@@ -52,7 +52,6 @@ const Pr2 = () => {
 
 
     const Submit = () => {
-        alert('Your details are printed at Console, Take a look')
         console.log(Details)
     }
 

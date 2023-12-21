@@ -81,7 +81,7 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
 
                             <button onClick={() => setShow(false)} className='absolute flex mx-auto text-white left-2 bottom-7'>
                                 <IoIosNotificationsOutline className='relative flex' size={40} />
-                                <span className='absolute right-0 w-4 pt-[1px] lg:pt-0 h-4 bg-red-600  rounded-full top-0 text-white text-xs'>{cart.length}</span>
+                                <span className='absolute right-0 w-4 pt-[1px] lg:pt-0 h-4 bg-red-600 lg:cursor-pointer rounded-full top-0 text-white text-xs'>{cart.length}</span>
                             </button>
 
                             <div className='absolute lg:hover mx-auto lg:cursor-pointer text-white right-2 bottom-8 md:hover:text-gray-300'>
@@ -145,7 +145,7 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                     </div>
                     <div className=''>
                         <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden h-screen lg:hidden bg-white `}>
-                            <div onClick={Toggle} className=' p-4 pt-5'>
+                            <div onClick={Toggle} className=' p-4 text-black pt-5'>
                                 <RxCross1 size={25} className='' onClick={openSlider} />
                             </div>
                             <div className=''>

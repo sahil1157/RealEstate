@@ -95,7 +95,7 @@ const Right = () => {
                 </div>
             </div>
 
-            <div className='justify-center flex items-center pt-10 text-center'>
+            <div className='justify-center flex items-center pt-5 text-center'>
                 <div className=''>
                     <button onClick={handleClick} className='text-xl font-semibold text-white hover:bg-[#374e76] bg-[#013698] rounded-xl text-center p-4 min-w-[244px] max-h-[60px]'>
                         Submit

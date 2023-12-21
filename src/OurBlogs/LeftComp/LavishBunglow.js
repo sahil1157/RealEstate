@@ -32,7 +32,7 @@ const LavishBunglow = () => {
                         BlogComp.map((i) => {
                             return (
                                 <div>
-                                    <div className='relative max-w-[839px] min-h-[515px] rounded-t-2xl bg-[#D9D9D9]'>
+                                    <div className='relative max-w-[839px] min-h-[350px] md:min-h-[395px] rounded-t-2xl bg-[#D9D9D9]'>
                                         <TextOver {...i} />
                                     </div>
                                     <div className=''>
@@ -41,7 +41,7 @@ const LavishBunglow = () => {
                                                 <div className='px-11 p-5 mt-14 sm:mt-8 md:mt-14 lg:mt-16 font-Oldenburg'>
                                                     <span className='text-2xl'>{i.name}</span>
                                                     <p className='text-lg text-[#00000080]'>{i.location}</p>
-                                                    
+
                                                     <div className='pt-6 flex flex-row gap-4 font-Oldenburg text-[#00000080]'>
                                                         <span>{i.icon}</span>
                                                         <span className='text-xl pt-1'>{i.CompName}</span>

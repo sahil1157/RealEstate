@@ -2,18 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Address from '../Address/Address'
 import YtLink from '../Contacts/YtLink'
 import PropSlider from '../PropertySlider/PropSlider'
-import PopularProps from '../../Components/Props/PopularProps'
-import Buildings from '../../Components/Popular/Buildings'
 import Comp1 from '../../MyWishList/Comp1'
 import { useParams } from 'react-router-dom'
 import { dataAarray } from '../../Components/Popular/Datas'
+import Featured from '../../Components/Featured/Featured'
 
 const Header2 = () => {
-  const featured = {
-    naam: "Similar",
-    Residences: 'Related Residences',
-    Explore: 'Explore All'
-  }
 
   let { itemName } = useParams();
   const dataItems = dataAarray.find((p) => p.id === Number(itemName))
@@ -22,12 +16,16 @@ const Header2 = () => {
 
   const [cart, setCart] = useState(dataFromLocalStorage)
 
-  const handleClicked = (cart) => {
-    if (cart.indexOf(dataItems) !== -1) {
-      const remove = cart.filter((items) => items.id !== dataItems.id)
-      setCart(remove)
+  const handleClicked = () => {
+    const exists = cart.find((x) => x.id === dataItems.id)
+    if (exists) {
+      const removeItems = cart.filter(x => x.id !== dataItems.id)
+      setCart(removeItems)
     }
-    else setCart([...cart, dataItems])
+    else {
+      setCart([...cart, dataItems])
+    }
+
   }
 
   useEffect(() => {
@@ -59,10 +57,11 @@ const Header2 = () => {
             <PropSlider handleClicked={handleClicked} dataItems={dataItems} cart={cart} setShow={setShow} isActive={isActive} ChangeToggle={Toggle} />
             <Address />
             <YtLink />
-            <div style={{ paddingInline: '8%' }}>
+            {/* <div style={{ paddingInline: '8%' }}>
               <PopularProps {...featured} />
-            </div>
-            <Buildings />
+            </div> */}
+            {/* <Buildings /> */}
+            <Featured />
           </div>
         ) : <Comp1 cart={cart} handleDelete={handleDelete} setShow={setShow} />
       }

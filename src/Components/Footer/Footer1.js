@@ -4,6 +4,9 @@ import FooterLogos from './FooterLogos';
 import CopyRight from './CopyRight';
 
 const Footer1 = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
     return (
 
         <div className='relative'>
@@ -15,9 +18,9 @@ const Footer1 = () => {
                             <div className=' md:text-center md:items-center lg:items-start lg:text-start lg:justify-start'>
                                 <p className='text-3xl font-semibold font-[Open sans]'>Subscribe To Our News Letter</p>
                                 <p className='text-lg pt-5 text-[#00000080] from-neutral-600 font-[Open Sans]' >Want to know about new property Update?</p>
-                                <form className='flex-col md:flex-row items-center justify-center lg:items-start lg:text-start lg:justify-start text-center  lg:flex-row flex pt-7 '>
+                                <form onClick={handleSubmit} className='flex-col md:flex-row items-center justify-center lg:items-start lg:text-start lg:justify-start text-center  lg:flex-row flex pt-7 '>
                                     <input type="email" className=' p-3 placeholder:font-[Oldenburg] rounded-md w-[60vw] md:rounded-none outline-none bg-[#C6D2E866] h-[66px] md:w-[338px] ' placeholder='email@gmal.com' />
-                                    <div className='pt-7 md:pt-0'><button className='  md:right-0 hover:bg-blue-950 w-[60vw] rounded-md md:rounded-none md:w-[160px]  min-h-[66px] text-white bg-[#013698] text-center text-lg text-[Oldenburg]'>Subscribe</button></div>
+                                    <div className='pt-7 md:pt-0'><button type='submit' className=' md:right-0 hover:bg-blue-950 w-[60vw] rounded-md md:rounded-none md:w-[160px]  min-h-[66px] text-white bg-[#013698] text-center text-lg text-[Oldenburg]'>Subscribe</button></div>
 
                                 </form>
                             </div>

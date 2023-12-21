@@ -2,7 +2,7 @@ import React from 'react'
 import PropSlider from '../PropertySlider/PropSlider'
 
 const AddtoFav = ({dataArray}) => {
-    console.log(dataArray,'this is a datArray')
+  
   return (
     <div>
       {

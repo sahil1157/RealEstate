@@ -8,7 +8,6 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import PropertyByLocation from '../PropertyType/PropertyByLocation'
 import Location from '../PropertyType/Location'
 import PopularImgs from '../Popular/PopularImgs'
-import Buildings from '../Popular/Buildings'
 import TextOverPopular from '../Popular/TextOverPopular'
 import Featured from '../Featured/Featured'
 import OurBlogs from '../Featured/OurBlogs'
@@ -19,8 +18,9 @@ import SeacrchThePrice from './SeacrchThePrice';
 import BuyHome from '../TypesOfProperty/BuyHome';
 import { NavsMap } from './1stHeaderArray';
 import { NavsMap2 } from './NavMap';
+import Build from '../Popular/Build';
 
-const Navigation = () => {
+const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMinNum, query, loading, setLocs, result }) => {
 
   const Bodystyle = document.body.style
   const [isLocked, setisLocked] = useState(
@@ -33,7 +33,7 @@ const Navigation = () => {
 
   const Toggle = () => {
     setisLocked(!isLocked)
-    return [isLocked, Toggle]
+    // return [isLocked, Toggle]
   }
 
 
@@ -81,7 +81,7 @@ const Navigation = () => {
             <nav>
               <ul className=' text-white hidden lg:flex space-x-12'>
                 <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/about'>About</NavLink>
-                <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/blog'>Blogs</NavLink>
+                <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/login'>Login</NavLink>
                 {/* <CgProfile onClick={Redirect} className=' cursor-pointer w-[35px] h-[33px] rounded-full' /> */}
               </ul>
             </nav>
@@ -92,7 +92,7 @@ const Navigation = () => {
           {/*  */}
         </div>
         <div className=''>
-          <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} duration-700 right-0 overflow-x-hidden top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
+          <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ease-in-out transform duration-500 h-full ' : 'hidden'} duration-200 right-0 overflow-x-hidden top-0 w-[230px] md:w-[300px] h-screen lg:hidden bg-white `}>
             <div onClick={Toggle} className=' p-4 pt-5'>
               <RxCross1 size={25} className=' cursor-pointer' onClick={openSlider} />
             </div>
@@ -109,15 +109,26 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-        <TextOverImage />
+        <TextOverImage/>
       </div >
-      <SeacrchThePrice />
+      <SeacrchThePrice
+        setLocation={setLocation}
+        setMinNum={setMinNum}
+        setQuery={setQuery}
+        loading={loading}
+        query={query}
+        result={result}
+        setLocs={setLocs}
+        location={location}
+        minNum={minNum}
+      />
       <BuyHome />
       {/* <Property /> */}
       <PropertyByLocation />
       <Location />
       <PopularImgs />
-      <Buildings />
+      {/* <Buildings /> */}
+      <Build />
       <TextOverPopular />
       <Featured />
       <OurBlogs />

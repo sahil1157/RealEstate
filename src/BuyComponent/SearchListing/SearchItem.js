@@ -3,7 +3,45 @@ import { dataAarray } from '../../Components/Popular/Datas'
 import Ind from '../../Components/PropertyContainer/Ind'
 import ArrySearch from './ArrySearch'
 
-const SearchItem = () => {
+const SearchItem = ({items}) => {
+
+    const [sorting, setSorting] = useState([...items])
+
+    let prevDatas = [...items]
+    const oldSorting = () => {
+        const result1 = prevDatas.sort((a, b) => {
+            let dateA = new Date(a.date)
+            let dateB = new Date(b.date)
+            if (dateA > dateB) return 1;
+            else if (dateA < dateB) return -1;
+            return 0;
+        })
+        setSorting(result1)
+    }
+    const defaultSorting = () => {
+        setSorting(prevDatas)
+    }
+
+    const newSorting = () => {
+        const result2 = prevDatas.sort((a, b) => {
+            let dateA = new Date(a.date);
+            let dateB = new Date(b.date)
+            if (dateA < dateB) return 1
+            else if (dateA > dateB) return -1
+            return 0
+        })
+        setSorting(result2)
+    }
+    const latestProperty = () => {
+        const result = prevDatas.sort((a, b) => {
+            let dateA = new Date(a.date);
+            let dateB = new Date(b.date)
+            if (dateA > dateB) return -1
+            else if (dateA < dateB) return 1
+            return 0
+        })
+        setSorting(result)
+    }
 
     const [details, setDetails] = useState({
         name: '',
@@ -30,7 +68,6 @@ const SearchItem = () => {
     }
 
     const CLicked = () => {
-        alert('Your details are printed at Console, Take a Look...')
         console.log(details)
     }
 
@@ -39,7 +76,7 @@ const SearchItem = () => {
     return (
 
         <div style={{ paddingInline: '4%' }} className=' pt-8 md:gap-6 flex-col md:flex-row justify-center flex lg:justify-between '>
-            <div className='justify-center flex text-center md:justify-start '>
+            <div className='justify-center flex text-center md:justify-start pt-5 '>
                 <div>
                     <div className='rounded-lg box-border md:min-w-[420px] min-w-full h-fit bg-[#D9D9D966]'>
                         <form onSubmit={handleSubmit} action="" className='md:grid-cols-1 grid-cols-1 justify-center text-center gap-7 grid p-10'>
@@ -68,12 +105,12 @@ const SearchItem = () => {
             {/* <SearchProp /> */}
             {/* <Buildings/> */}
             <div className=''>
-                <ArrySearch />
-                <div className='xs:flex xs:flex-wrap justify-center mx-0 grid sm:grid-cols-2 md:grid-cols-1 ms:grid lg:grid lg:grid-cols-2 gap-12'>
+                <ArrySearch oldSorting={oldSorting} defaultSorting={defaultSorting} newSorting={newSorting} latestProperty={latestProperty} />
+                <div className='xs:flex pt-2 duration-300 transform xs:flex-wrap justify-center mx-0 grid sm:grid-cols-2 md:grid-cols-1 ms:grid lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3 gap-7'>
                     {
-                        dataAarray.map((i) => {
+                        sorting && sorting.map((i, ind) => {
                             return (
-                                <Ind item={i} />
+                                <Ind key={ind.id} item={i} />
                             )
                         })
                     }

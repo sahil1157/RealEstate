@@ -62,9 +62,9 @@ const Header = (HeaderProp) => {
                     </div>
                     <div className='pt-4 hidden lg:flex flex-row gap-10 text-white'>
                         {
-                            NavsMap.map((i) => {
+                            NavsMap.map((i, ind) => {
                                 return (
-                                    <nav>
+                                    <nav key={ind.id}>
                                         <ul className=' flex gap-10 '>
                                             <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to={i.to} >{i.name}</NavLink>
                                         </ul>
@@ -101,14 +101,14 @@ const Header = (HeaderProp) => {
                 </div>
                 <div className=''>
                     <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden lg:hidden h-full bg-white `}>
-                        <div onClick={Toggle} className=' p-4 pt-5'>
+                        <div onClick={Toggle} className='text-black p-4 pt-5'>
                             <RxCross1 size={25} className='' onClick={openSlider} />
                         </div>
                         <div className='p-6'>
                             {
-                                NavsMap2.map((i) => {
+                                NavsMap2.map((i, ind) => {
                                     return (
-                                        <ul className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
+                                        <ul key={ind.id} className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
                                             <NavLink to={i.to} className={i.className} >{i.name}</NavLink>
                                         </ul>
                                     )

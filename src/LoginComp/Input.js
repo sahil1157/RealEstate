@@ -69,7 +69,7 @@ const Input = ({name}) => {
                                         name='Contact'
                                         autoComplete='off'
                                         onBlur={formik.handleBlur}
-                                        placeholder='enter your Contact'
+                                        placeholder='enter your Number'
                                         className='bg-white font-Oldenburg p-2 rounded-lg outline-none placeholder:text-[#01369866] w-[70%] h-[70px] ' />
 
                                     {
