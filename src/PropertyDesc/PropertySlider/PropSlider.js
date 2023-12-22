@@ -12,20 +12,22 @@ import TextInImage from '../../BuyComponent/HeaderFile/TextInImage';
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { CiHeart } from "react-icons/ci";
 
-const settings = {
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 800,
-    arrows: true,
-    slidesToShow: true,
-    dots: false,
-    prevArrow: <BsArrowLeft />,
-    nextArrow: <BsArrowRight />
-
-};
-
 const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
+
+
+    const settings = {
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 800,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        prevArrow: <BsArrowLeft />,
+        nextArrow: <BsArrowRight />,
+
+    };
 
     const HeaderProp = {
         name: 'House photos'
@@ -73,10 +75,10 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                     dataItems && dataItems ? (
                         <div className='relative items-center mx-auto'>
                             <Slider {...settings}>
-                                <img src={dataItems.homeImg} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
-                                <img src={dataItems.img1} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
-                                <img src={dataItems.img2} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
-                                <img src={dataItems.img3} alt="" className='m-0 w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.homeImg} alt="" className=' w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.img1} alt="" className=' w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.img2} alt="" className=' w-full object-cover lg:h-screen h-[500px] bg-center' />
+                                <img src={dataItems.img3} alt="" className=' w-full object-cover lg:h-screen h-[500px] bg-center' />
                             </Slider>
 
                             <button onClick={() => setShow(false)} className='absolute flex mx-auto text-white left-2 bottom-7'>

@@ -10,7 +10,7 @@ import Featured from '../../Components/Featured/Featured'
 const Header2 = () => {
 
   let { itemName } = useParams();
-  const dataItems = dataAarray.find((p) => p.id === Number(itemName))
+  const dataItems = dataAarray.find(p => p.id === Number(itemName))
 
   const dataFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
