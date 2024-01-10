@@ -38,9 +38,9 @@ const Left = () => {
 
                     <div className='flex-wrap flex xl:flex-col lg:flex-col gap-4 justify-between'>
                         {
-                            MappedIcons.map((i) => {
+                            MappedIcons.map((i,ind) => {
                                 return (
-                                    <div className='flex sm:flex sm:flex-col md:flex-row gap-7 pt-7'>
+                                    <div key={ind.id} className='flex sm:flex sm:flex-col md:flex-row gap-7 pt-7'>
                                         <div className="xl:w-24 xl:h-24 md::w-24 md:w-28 md:h-28 w-20 h-20 border-[1px] border-[#00000080] rounded-full inline-flex items-center justify-center bg-white text-gray-700 text-xl font-bold">
                                             <p className='text-3xl text-[#013698]'>{i.icons}</p>
                                         </div>

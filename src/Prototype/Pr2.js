@@ -128,9 +128,9 @@ const Pr2 = () => {
             <div className='gap-8 flex flex-col flex-wrap md:grid md:grid-cols-2 xl:grid-cols-2 xl:grid lg:grid lg:grid-cols-2'>
 
                 {
-                    SellMap.map((i) => {
+                    SellMap.map((i,ind) => {
                         return (
-                            <div className=''>
+                            <div key={ind.id} className=''>
                                 <form onSubmit={handleSubmit} className='' action="">
                                     <p className=' text-xl font-bold text-[#736F6F]'>{i.name}</p>
                                     <div className='pt-3'>

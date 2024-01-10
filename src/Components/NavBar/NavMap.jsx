@@ -47,4 +47,16 @@
     className:
       "p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer",
   },
+  {
+    name: " Calculator",
+    to: "/calculatearea",
+    className:
+      "p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer",
+  },
+  {
+    name: " Login",
+    to: "/login",
+    className:
+      "p-3 hover:bg-gray-400 hover:text-white hover:animate-pulse rounded-md cursor-pointer",
+  },
 ];

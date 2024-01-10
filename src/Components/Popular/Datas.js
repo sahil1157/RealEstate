@@ -1,7 +1,7 @@
 export const dataAarray = [
 
     {
-
+        userName: 'Achyut Adhikari',
         homeImg: '/Houseimgs/Amenties1/House-1.jpg',
         img1: '/Houseimgs/Amenties1/amenties-1.jpg',
         img2: '/Houseimgs/Amenties1/amenties-2.jpeg',
@@ -20,7 +20,7 @@ export const dataAarray = [
     },
 
     {
-
+        userName: 'Aayush Aryal',
         homeImg: '/Houseimgs/Amenties-2/House-2.jpg',
         img1: '/Houseimgs/Amenties-2/amenties-1.jpg',
         img2: '/Houseimgs/Amenties-2/amenties-2.jpg',
@@ -38,6 +38,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Mama Subedi',
         homeImg: '/Houseimgs/amenties-3/house1.avif',
         img1: '/Houseimgs/amenties-3/amenties-1.jpg',
         img2: '/Houseimgs/amenties-3/amenties-3.jpg',
@@ -55,6 +56,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Ashmita Giri',
         homeImg: '/Houseimgs/amenties4/house1.jpg',
         img1: '/Houseimgs/amenties4/amenties-1.jpg',
         img2: '/Houseimgs/amenties4/amenties-2.jpg',
@@ -72,6 +74,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Binod Syangtang',
         homeImg: '/Houseimgs/amenties-3/house1.avif',
         img1: '/Houseimgs/amenties-3/amenties-1.jpg',
         img2: '/Houseimgs/amenties-3/amenties-3.jpg',
@@ -89,6 +92,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Prem Joshi',
         homeImg: '/Houseimgs/Amenties1/House-1.jpg',
         img1: '/Houseimgs/Amenties1/amenties-1.jpg',
         img2: '/Houseimgs/Amenties1/amenties-2.jpeg',
@@ -106,8 +110,7 @@ export const dataAarray = [
 
     },
     {
-
-
+        userName: 'Sahil Basnet',
         homeImg: '/Houseimgs/amenties-3/house1.avif',
         img1: '/Houseimgs/amenties-3/amenties-1.jpg',
         img2: '/Houseimgs/amenties-3/amenties-3.jpg',
@@ -125,6 +128,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Abhisekh Khadka',
         homeImg: '/Bunglow4.jpg',
         id: 8,
         name: "apartment",
@@ -139,6 +143,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Devashish Upreti',
         homeImg: '/bung1.jpg',
         id: 9,
         name: "Building",
@@ -153,6 +158,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Ashutosh Neupane',
         homeImg: '/Bunglow.webp',
         id: 10,
         name: "apartment",
@@ -168,6 +174,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Achyut Adhikari',
         homeImg: '/Houseimgs/amenties4/house1.jpg',
         img1: '/Houseimgs/amenties4/amenties-1.jpg',
         img2: '/Houseimgs/amenties4/amenties-2.jpg',
@@ -185,6 +192,7 @@ export const dataAarray = [
 
     },
     {
+        userName: 'Aayush Aryal',
         homeImg: '/Houseimgs/Amenties1/House-1.jpg',
         img1: '/Houseimgs/Amenties1/amenties-1.jpg',
         img2: '/Houseimgs/Amenties1/amenties-2.jpeg',

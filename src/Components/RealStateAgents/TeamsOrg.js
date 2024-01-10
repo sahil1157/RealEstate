@@ -39,10 +39,10 @@ const TeamsOrg = () => {
     <div className='pt-14' style={{ paddingInline: '8%' }}>
       <div className='flex text-center gap-6 justify-center md:grid-cols-2 mdLgrid flex-wrap md:justify-between'>
         {
-          Lists.map((items) => {
+          Lists.map((items,ind) => {
             return (
               <div>
-                <AgentProps items={items} />
+                <AgentProps key={ind.id} items={items} />
               </div>
             )
           })

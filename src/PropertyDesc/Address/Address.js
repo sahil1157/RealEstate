@@ -1,32 +1,25 @@
+import '../../App.css'
 import LowerComponent from './LowerAddress'
 import UpperComp from '../Contacts/UpperComp'
 import { dataAarray } from '../../Components/Popular/Datas'
 import { useParams } from 'react-router-dom'
+import { useContext, useState } from 'react'
+import { userContext } from '../../ContextAPI/CreateContext'
 
 const Address = () => {
+const {contactToUser,scrollToContact} = useContext(userContext)
 
-    // const [data, setData] = useState()
-
-    // let { itemName } = useParams()
-    // console.log(itemName)
-
-    // useEffect(() => {
-    //     if (itemName) {
-
-
-    //         let DataItms = dataAarray.find((p) => p.id === Number(itemName))
-    //         setData(DataItms)
-    //         console.log("DadtaIitems",DataItms)
-
-    //     }
-    // }, [itemName])
+    const [toggle, setToggle] = useState(false)
+    const toggleOnClick = () => {
+        setToggle(!toggle)
+    }
 
     let { itemName } = useParams();
 
     const dataItems = dataAarray.find((p) => p.id === Number(itemName))
 
     return (
-        <div style={{ paddingInline: '3%' }} className=' lg:flex-row xl:flex-row items-center justify-center flex flex-col lg:justify-between xl:justify-between lg:flex lg:lg:flex-row gap-9 pt-6 md:pt-14'>
+        <div style={{ paddingInline: '7%' }} className='md:grid flex flex-col md:grid-cols-2 pt-12 gap-10'>
             <div className=''>
                 <div className='min-h-[266px] rounded-lg max-w-[709px] box-border border-[1px] border-[#0000001F]'>
                     <div className=' flex flex-col '>
@@ -63,7 +56,7 @@ const Address = () => {
                     </div>
                 </div>
                 <div>
-                    <LowerComponent  />
+                    <LowerComponent toggle={toggle} />
                 </div>
             </div>
             <div>

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import { userContext } from '../ContextAPI/CreateContext';
 
-const Comp1 = ({ cart,setShow, handleDelete }) => {
+const Comp1 = () => {
+  const { cart, handleDelete, setShow } = useContext(userContext)
 
   const navigate = useNavigate()
 
@@ -34,9 +36,9 @@ const Comp1 = ({ cart,setShow, handleDelete }) => {
         </div>
         <div className='pt-6 flex flex-col gap-6'>
           {
-            cart && cart.map((i) => {
+            cart && cart.map((i,ind) => {
               return (
-                <div key={cart.id} className='box-border border-[2px] justify-start shadow-lg rounded-lg items-start md:items-center md:justify-between flex flex-col md:flex-row w-[100%]'>
+                <div key={ind.id} className='box-border border-[2px] justify-start shadow-lg rounded-lg items-start md:items-center md:justify-between flex flex-col md:flex-row w-[100%]'>
                   <div className='flex flex-col md:flex-row items-start text-start md:items-center'>
                     <img src={i.img} alt="" className='md:w-[230px] rounded-lg w-screen object-fit bg-cover h-[200px]' />
                     <div className='md:p-3 p-2 flex flex-col'>
@@ -47,7 +49,8 @@ const Comp1 = ({ cart,setShow, handleDelete }) => {
                     </div>
                   </div>
                   <div className='flex flex-row p-[8px] md:flex-col gap-3 items-start justify-start mr-4'>
-                    <button onClick={NavigateTo} className='w-[100px] h-[40px] rounded-lg bg-blue-600 text-white text-center'>Contact</button>
+                    <button onClick={NavigateTo}
+                      className='w-[100px] h-[40px] rounded-lg bg-blue-600 text-white text-center'>Contact</button>
                     <button onClick={() => handleDelete(i.id)} className='w-[100px] h-[40px] rounded-lg bg-red-600 text-white text-center'>Remove</button>
                   </div>
                 </div>

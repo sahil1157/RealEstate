@@ -24,6 +24,8 @@ const SeacrchThePrice = ({ setQuery, minNum, location, setLocation, setMinNum, l
         },
     ])
 
+    
+
     return (
         <>
             <div>
@@ -38,7 +40,7 @@ const SeacrchThePrice = ({ setQuery, minNum, location, setLocation, setMinNum, l
 
                                     <div className='relative flex whitespace-nowrap items-center'>
                                         <IoLocationSharp size={25} className='text-[#00000080] absolute right-0 lg:right-3' />
-                                        <input onChange={(e) => setLocation(e.target.value)} placeholder='Location' type="text" className={`outline-none pr-10 rounded-md w-[45vw] p-3 md:w-[12vw]  lg:w-[10vw] h-10 ${loading && location.length === 0 ? 'border-red-600 ease-in duration-500 ' : ''} border-[2px]`} />
+                                        <input onChange={(e) => setLocation(e.target.value)} placeholder='Location' type="text" className={`outline-none pr-10 rounded-md w-[45vw] p-3 md:w-[12vw]  lg:w-[10vw] h-10 ${loading && location.length === 0 ? 'border-red-600 ease-in duration-100 ' : ''} border-[2px]`} />
                                     </div>
                                     <div>
                                         <select onChange={(e) => setQuery(e.target.value)} className='cursor-pointer bg-white outline-none border-gray-200 text-gray-400 pl-3 rounded-md w-[45vw] md:w-[12vw] lg:w-[10vw] h-10 border-[2px]' name="select" id="">
@@ -58,7 +60,7 @@ const SeacrchThePrice = ({ setQuery, minNum, location, setLocation, setMinNum, l
 
                                     <div className='relative flex items-center'>
                                         <MdOutlineCurrencyRupee size={25} className='right-0 lg:right-3 absolute text-[#00000080]' />
-                                        <input onChange={(e) => setMinNum(e.target.value)} required min='200000' placeholder='min' type="number" className={`outline-none pr-10 rounded-md w-[45vw] text-[13px] placeholder:text-lg p-3 md:w-[12vw] lg:w-[10vw] h-10 ${loading && minNum.length === 0 ? 'border-red-600 ease-in duration-500 ' : ''} border-[2px]`} />
+                                        <input onChange={(e) => setMinNum(e.target.value)} required min='200000' placeholder='min' type="number" className={`outline-none pr-10 rounded-md w-[45vw] text-[13px] placeholder:text-lg p-3 md:w-[12vw] lg:w-[10vw] h-10 ${loading && minNum.length === 0 ? 'border-red-600 ease-in duration-100 ' : ''} border-[2px]`} />
                                     </div>
                                     <div className=''>
 
@@ -71,7 +73,6 @@ const SeacrchThePrice = ({ setQuery, minNum, location, setLocation, setMinNum, l
                                                     search</button>
                                             )
                                         }
-
                                     </div>
                                 </form>
                             </div>

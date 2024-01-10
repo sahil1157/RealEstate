@@ -27,9 +27,9 @@ const ResidenceStatus = ({ handleChange }) => {
         <div>
             <div className='pt-3'>
                 {
-                    Resident.map((i) => {
+                    Resident.map((i,id) => {
                         return (
-                            <div className='pt-5 p-2'>
+                            <div key={id.id} className='pt-5 p-2'>
                                 <label className='text-lg flex-wrap font-bold text-[#736F6F]'>{i.name1}</label>
                                 <form action="">
                                     <div className='flex pt-3 gap-7'>

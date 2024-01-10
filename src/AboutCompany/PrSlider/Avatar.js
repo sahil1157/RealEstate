@@ -34,9 +34,9 @@ const Avatar1 = () => {
             <Slider {...settings}>
 
                 {
-                    avs.map((i) => {
+                    avs.map((i,ind) => {
                         return (
-                            <div className='box-border pt-5 h-[400px] w-[100vw] border-black border-2 flex-row'>
+                            <div key={ind.id} className='box-border pt-5 h-[400px] w-[100vw] border-black border-2 flex-row'>
                                 <div className='flex justify-center '>
                                     <Avatar
                                         src={i.img}

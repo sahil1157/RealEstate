@@ -6,21 +6,20 @@ import Exclusive from './Exclusive';
 import logo from '../logos/estate-removebg-preview.png'
 
 
-const Ind = ( {item} ) => {
+const Ind = ({ item }) => {
 
-    
+
 
     return (
         <div className='z-10 '>
             {/*  */}
             <Link to={`/property/ ${item.id}`}>
                 <div className='pt-4 '>
-                    <div className=' lg:max-w-[300px] max-w-[370px] rounded-xl lg:h-[350px] transform ease-in hover:shadow-gray-400 duration-300 bg-white box-border min-h-[360px] border-[1px] border-[#0000001F] shadow-lg'>
+                    <div className=' lg:max-w-[300px] max-w-[370px] rounded-xl lg:h-[350px] transform ease-in hover:shadow-gray-600 duration-300 bg-white box-border min-h-[360px] border-[1px] border-[#0000001F] shadow-lg'>
                         <div className='relative mx-auto justify-center'>
                             <Exclusive />
                             <img src={logo} className='w-14 h-8 absolute mx-auto text-white right-2 bottom-8 hover:text-slate-400' alt="" />
                             <img className=' w-full h-[242px] rounded-xl object-cover ' src={item.img} alt="" />
-
                             <h1 style={{ paddingInline: '6%' }} className='font-[open sans] font-semibold text-[18px] px-4 lg:px-8 text-[#013698]'>{item.name}</h1>
                         </div>
                         <div style={{ paddingInline: '5%' }} className='flex flex-row px-4 lg:px-7 pt-1'>

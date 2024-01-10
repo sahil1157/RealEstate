@@ -36,9 +36,6 @@ const TextOverImage = () => {
           <h3 className='md:text-md lg:text-md text-sm font-[Oldenburg] text-gray-300'>Wealthy Feedbacks</h3>
         </div>
       </div>
-      {/*  */}
-
-      {/*  */}
     </div>
   )
 }

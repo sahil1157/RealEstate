@@ -3,6 +3,7 @@ import { PiBedThin } from 'react-icons/pi'
 import { GiBathtub } from 'react-icons/gi'
 import { AiFillCar } from 'react-icons/ai'
 import { PiBuildingsDuotone } from 'react-icons/pi'
+import DidntFindProperty from './DidntFindProperty'
 
 const Icons = [
     {
@@ -62,9 +63,9 @@ const LowerComponent = () => {
                 <div className=' box-border max-w-[704px] min-h-[454px] lg:justify-start xl:justify-start justify-center rounded-lg border-[1px] border-[#0000001F]'>
                     <div className='pt-14 px-10 flex-wrap grid grid-cols-2 gap-3 p-6 '>
                         {
-                            Icons.map((i) => {
+                            Icons.map((i,ind) => {
                                 return (
-                                    <div className='  flex flex-wrap flex-row gap-4'>
+                                    <div key={ind.id} className='  flex flex-wrap flex-row gap-4'>
                                         <div className=' flex flex-row gap-3'>
                                             <span className='text-[#736F6F] text-3xl'>{i.icon}</span>
                                             <div className='flex flex-col'>
@@ -100,12 +101,9 @@ const LowerComponent = () => {
                         </div>
 
                     </div>
-
-                    <div>
-
-                    </div>
                 </div>
             </div>
+           
         </div>
     )
 }

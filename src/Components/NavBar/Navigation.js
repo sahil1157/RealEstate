@@ -27,6 +27,15 @@ const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMi
     Bodystyle.overflowY === 'hidden'
   )
 
+  const [state, setState] = useState(false)
+
+  const onShowBtn = () => {
+    setState(true)
+  }
+  const onHideBtn = () => {
+    setState(false)
+  }
+
   useEffect(() => {
     Bodystyle.overflow = isLocked ? 'hidden' : 'auto'
   }, [isLocked, Bodystyle])
@@ -62,11 +71,11 @@ const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMi
               <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
             </div>
           </div>
-          <div className='pt-4 hidden lg:flex flex-row gap-10 text-white'>
+          <div className='pt-4 hidden lg:flex flex-row gap-10 xl:gap-20 text-white'>
             {
-              NavsMap.map((i) => {
+              NavsMap.slice(1, 8).map((i,ind) => {
                 return (
-                  <nav>
+                  <nav key={ind.id}>
                     <ul className=' flex gap-10 '>
                       <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to={i.to} >{i.name}</NavLink>
                     </ul>
@@ -78,13 +87,22 @@ const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMi
           </div>
           {/*  */}
           <div className=' pt-4 '>
-            <nav>
-              <ul className=' text-white hidden lg:flex space-x-12'>
-                <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/about'>About</NavLink>
-                <NavLink className='cursor-pointer hover:border-b-2 border-red-400 duration-75' to='/login'>Login</NavLink>
-                {/* <CgProfile onClick={Redirect} className=' cursor-pointer w-[35px] h-[33px] rounded-full' /> */}
-              </ul>
-            </nav>
+            <div className=' text-white hidden lg:flex space-x-16'>
+              <div onMouseEnter={onShowBtn} onMouseLeave={onHideBtn} className='relative'>
+                <p className='cursor-pointer'>More</p>
+                {
+                  state ? (
+                    <div className='flex flex-col gap-3 absolute pt-4' onMouseEnter={onShowBtn}>
+                      <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/about'>AboutUs</NavLink>
+                      <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/blog'>Blogs</NavLink>
+                      <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/calculatearea'>Calculator</NavLink>
+                    </div>
+                  ) : null
+                }
+              </div>
+
+              <NavLink className='cursor-pointer' to='/login'>LogIn</NavLink>
+            </div>
           </div>
           <div onClick={Toggle} className='pt-4 lg:cursor-pointer text-white lg:hidden'>
             <RxHamburgerMenu className='' onClick={openSlider} size={30} />
@@ -96,11 +114,11 @@ const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMi
             <div onClick={Toggle} className=' p-4 pt-5'>
               <RxCross1 size={25} className=' cursor-pointer' onClick={openSlider} />
             </div>
-            <div className='p-6'>
+            <div className='p-6 flex-col gap-5'>
               {
-                NavsMap2.map((i) => {
+                NavsMap2.slice(1).map((i,ind) => {
                   return (
-                    <ul className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
+                    <ul key={ind.id} className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
                       <NavLink to={i.to} className={i.className} >{i.name}</NavLink>
                     </ul>
                   )
@@ -109,7 +127,7 @@ const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMi
             </div>
           </div>
         </div>
-        <TextOverImage/>
+        <TextOverImage />
       </div >
       <SeacrchThePrice
         setLocation={setLocation}
@@ -122,12 +140,12 @@ const Navigation = ({ setQuery, minNum, setLoading, location, setLocation, setMi
         location={location}
         minNum={minNum}
       />
-      <BuyHome />
-      {/* <Property /> */}
+      <div onClick={() => setLoading(false)}>
+        <BuyHome />
+      </div>
       <PropertyByLocation />
       <Location />
       <PopularImgs />
-      {/* <Buildings /> */}
       <Build />
       <TextOverPopular />
       <Featured />

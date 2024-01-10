@@ -5,7 +5,7 @@ import { RiAdvertisementFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 
-const BuyHome = ({ setLoading }) => {
+const BuyHome = () => {
 
     const BuyyHomeMap = [
         {
@@ -43,12 +43,12 @@ const BuyHome = ({ setLoading }) => {
     ]
 
     return (
-        <div style={{ paddingInline: '8%' }} className='-mt-28 md:mt-0'>
+        <div  style={{ paddingInline: '8%' }} className='-mt-28 md:mt-0'>
             <div className='flex flex-col mx-0 items-center justify-center  lg:flex md:grid md:grid-cols-2  lg:flex-row gap-9'>
                 {
-                    BuyyHomeMap.map((i) => {
+                    BuyyHomeMap.map((i,ind) => {
                         return (
-                            <div className='text-center box-border gap-6 border-gray-300 group hover:border-blue-950 md:cursor-pointer border-[1px] rounded-md w-full min-h-[300px] md:h-52 flex flex-col justify-center items-center'>
+                            <div key={ind.id} className='text-center box-border gap-6 border-gray-300 group hover:border-blue-950 md:cursor-pointer border-[1px] rounded-md w-full min-h-[300px] md:h-52 flex flex-col justify-center items-center'>
                                 <div className='gap-1 flex flex-col'>
                                     <span className='flex justify-center text-[85px] text-blue-600'>{i.icons}</span>
                                     <p className='text-xl'>{i.name}</p>

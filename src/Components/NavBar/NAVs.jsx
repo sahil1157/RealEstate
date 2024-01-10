@@ -15,6 +15,8 @@ import Blog from '../Pages/Blogs.js'
 import Saved from '../Pages/Saved.js'
 import { dataAarray } from '../Popular/Datas.js'
 import { useNavigate } from 'react-router-dom'
+import LinkToBlog from '../../OurBlogs/LinkToBlogs/LinkToBlog.js'
+import Area from '../Pages/Area.js'
 
 const NAVs = () => {
   // const storeMinNum = JSON.parse(localStorage.getItem('minNum') || "[]")
@@ -25,8 +27,6 @@ const NAVs = () => {
   const [location, setLocation] = useState('')
   const [minNum, setMinNum] = useState('')
   const navigate = useNavigate()
-
-
 
   const { pathname } = useLocation()
   useEffect(() => {
@@ -53,6 +53,13 @@ const NAVs = () => {
     }
   }
 
+  const scrollToContact = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth'
+    })
+  }
+
   // useEffect(() => {
   //   window.localStorage.setItem('location', JSON.stringify(location))
   // }, [location])
@@ -77,7 +84,7 @@ const NAVs = () => {
 
 
         <Route path='/buy' element={<Buy items={items} />} />
-        <Route path='/property' element={<PropertyNav />} />
+        <Route path='/property' element={<PropertyNav scrollToContact = {scrollToContact} />} />
         <Route path='/property/:itemName' element={<PropertyNav />} />
         <Route path='/sell' element={<Sell />} />
         <Route path='/homeloan' element={<HomeLoan />} />
@@ -90,6 +97,8 @@ const NAVs = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/saved' element={<Saved />} />
+        <Route path='/blogs/:id' element={<LinkToBlog />} />
+        <Route path='/calculatearea' element={<Area />} />
 
       </Routes>
     </div>

@@ -43,12 +43,11 @@ const Header = (HeaderProp) => {
         setisLocked(!isLocked)
     }
 
-
     return (
         <div>
             <div className=' justify-center flex items-center mx-auto'>
-                <img src={HeaderProp.img} alt="" className='m-0 w-full object-fit md:object-cover md:h-[750px] h-[500px] bg-center' />
-                <div className='absolute text-center justify-center'>
+                <img src={HeaderProp.img} alt="" className='w-full h-[500px] lg:h-[768px] object-cover' />
+                <div className='absolute flex flex-col gap-2 text-center justify-center'>
                     <TextInImage {...HeaderProp} />
                 </div>
             </div>
@@ -60,9 +59,9 @@ const Header = (HeaderProp) => {
                             <img onClick={Homepage} src={logo} alt="" className=' lg:cursor-pointer lg:w-[150px] md:w-[150px] lg:h-[65.54px] md:h-[55px] w-26 h-12' />
                         </div>
                     </div>
-                    <div className='pt-4 hidden lg:flex flex-row gap-10 text-white'>
+                    <div className='pt-4 hidden lg:flex flex-row gap-10 xl:gap-20 text-white'>
                         {
-                            NavsMap.map((i, ind) => {
+                            NavsMap.slice(1, 7).map((i, ind) => {
                                 return (
                                     <nav key={ind.id}>
                                         <ul className=' flex gap-10 '>
@@ -76,23 +75,22 @@ const Header = (HeaderProp) => {
                     </div>
                     {/*  */}
                     <div className=' pt-4 '>
-                        <>
-                            <div className=' text-white hidden lg:flex space-x-16'>
-                                <div onMouseEnter={onShowBtn} onMouseLeave={onHideBtn} className='relative'>
-                                    <p className='cursor-pointer'>More</p>
-                                    {
-                                        state ? (
-                                            <div className='flex flex-col gap-3 absolute pt-4' onMouseEnter={onShowBtn}>
-                                                <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/about'>AboutUs</NavLink>
-                                                <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/blog'>Blogs</NavLink>
-                                            </div>
-                                        ) : null
-                                    }
-                                </div>
-
-                                <NavLink className='cursor-pointer' to='/login'>LogIn</NavLink>
+                        <div className=' text-white hidden lg:flex space-x-16'>
+                            <div onMouseEnter={onShowBtn} onMouseLeave={onHideBtn} className='relative'>
+                                <p className='cursor-pointer'>More</p>
+                                {
+                                    state ? (
+                                        <div className='flex flex-col gap-3 absolute pt-4' onMouseEnter={onShowBtn}>
+                                            <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/about'>AboutUs</NavLink>
+                                            <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/blog'>Blogs</NavLink>
+                                            <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/calculatearea'>Calculator</NavLink>
+                                        </div>
+                                    ) : null
+                                }
                             </div>
-                        </>
+
+                            <NavLink className='cursor-pointer' to='/login'>LogIn</NavLink>
+                        </div>
                     </div>
                     <div onClick={Toggle} id="btn" className='pt-4 text-white lg:hidden'>
                         <RxHamburgerMenu className='' onClick={openSlider} size={30} />
@@ -100,13 +98,13 @@ const Header = (HeaderProp) => {
                     {/*  */}
                 </div>
                 <div className=''>
-                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] overflow-x-hidden lg:hidden h-full bg-white `}>
+                    <div style={{ zIndex: '20' }} className={`fixed ${slider ? 'fixed ' : 'hidden'} right-0 top-0 w-[230px] md:w-[300px] h-screen overflow-x-hidden lg:hidden bg-white `}>
                         <div onClick={Toggle} className='text-black p-4 pt-5'>
                             <RxCross1 size={25} className='' onClick={openSlider} />
                         </div>
-                        <div className='p-6'>
+                        <div className='p-6 flex flex-col'>
                             {
-                                NavsMap2.map((i, ind) => {
+                                NavsMap2.slice(1).map((i, ind) => {
                                     return (
                                         <ul key={ind.id} className=' p-2 text-black transition-all duration-100 delay-100 flex flex-col '>
                                             <NavLink to={i.to} className={i.className} >{i.name}</NavLink>

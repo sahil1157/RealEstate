@@ -60,9 +60,9 @@ const SliderFirst = () => {
       <div className=''>
         <Slider {...settings}>
           {
-            Slides.map((i) => {
+            Slides.map((i,ind) => {
               return (
-                <div className='mt-10'>
+                <div key={ind.id} className='mt-10'>
                   <div className='flex justify-center '>
                     <Avatar
                       src={i.img}

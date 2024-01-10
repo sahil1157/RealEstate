@@ -17,9 +17,9 @@ const Arrays = () => {
         <div className='pt-12 '>
             <div className='md:grid md:grid-cols-2 flex flex-wrap justify-center place-items-center gap-10'>
                 {
-                    BlogComp.slice(perVisit, perPage + perVisit).map((i) => {
+                    BlogComp.slice(perVisit, perPage + perVisit).map((i,ind) => {
                         return (
-                            <div>
+                            <div key={ind.id}>
                                 <div className='relative cursor-pointer max-w-[645px] min-h-[315px] rounded-t-2xl bg-[#D9D9D9]'>
                                     <TextOver {...i} />
                                 </div>

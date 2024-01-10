@@ -34,9 +34,9 @@ const HousingInfo = () => {
     return (
         <div style={{ paddingInline: '8%' }} className='pt-0 flex md:grid-cols-1 items-center flex-col justify-center lg:justify-between flex-wrap lg:flex lg:flex-row'>
             {
-                features.map((i) => {
+                features.map((i, ind) => {
                     return (
-                        <div className='pt-12' >
+                        <div key={ind.id} className='pt-12' >
                             <HousingProps items={i} />
                         </div>
 

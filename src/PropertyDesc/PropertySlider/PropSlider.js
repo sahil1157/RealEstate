@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import logo from '../../Components/logos/estate-removebg-preview.png'
 import { RxCross1, RxHamburgerMenu } from 'react-icons/rx';
 import { NavLink, useNavigate } from 'react-router-dom'
@@ -11,9 +11,16 @@ import imgage from '../../Components/Popular/images/realHeader.png'
 import TextInImage from '../../BuyComponent/HeaderFile/TextInImage';
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { CiHeart } from "react-icons/ci";
+import { userContext } from '../../ContextAPI/CreateContext';
 
-const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
+const PropSlider = () => {
 
+    const {
+        handleClicked,
+        dataItems,
+        setShow,
+        cart
+    } = useContext(userContext)
 
     const settings = {
         infinite: true,
@@ -111,7 +118,7 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                             <nav>
                                 <ul className=' flex gap-10 '>
                                     {/*  */}
-                                    <NavLink to='/property/' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >properties</NavLink>
+                                    {/* <NavLink to='/property/' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >properties</NavLink> */}
                                     <NavLink to='/buy' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >Buy</NavLink>
                                     <NavLink to='/sell' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >Sell</NavLink>
                                     <NavLink to='/homeloan' className='cursor-pointer hover:border-b-2 border-red-400 duration-75' >HomeLoan</NavLink>
@@ -131,6 +138,7 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                                                 <div className='flex flex-col gap-3 absolute pt-4' onMouseEnter={onShowBtn}>
                                                     <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/about'>AboutUs</NavLink>
                                                     <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/blog'>Blogs</NavLink>
+                                                    <NavLink className='cursor-pointer hover:border-b-2 duration-75 border-red-500' to='/calculatearea'>Calculator</NavLink>
                                                 </div>
                                             ) : null
                                         }
@@ -151,8 +159,8 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                                 <RxCross1 size={25} className='' onClick={openSlider} />
                             </div>
                             <div className=''>
-                                <ul className='pt-11 p-4 text-black transition-all duration-100 delay-100 grid grid-cols-1 ' >
-                                    <NavLink to='/property/Buildings' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >Properties</NavLink>
+                                <ul className='pt-11 p-4 gap-2 text-black transition-all duration-100 delay-100 grid grid-cols-1 ' >
+                                    {/* <NavLink to='/property/Buildings' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >Properties</NavLink> */}
                                     <NavLink to='/buy' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >Buy</NavLink >
                                     <NavLink to='/sell' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>Sell</NavLink  >
                                     <NavLink to='/homeloan' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer' >HomeLoans</NavLink >
@@ -160,7 +168,9 @@ const PropSlider = ({ handleClicked, dataItems, cart, setShow }) => {
                                     <NavLink to='/development' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>DevelopmentProjects</NavLink>
                                     <NavLink to='/about' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>About Us</NavLink>
                                     <NavLink to='/blog' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>Our Blogs</NavLink>
+                                    <NavLink to='/calculatearea' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>Calculator</NavLink>
                                     <NavLink to='/login' className='p-4 hover:bg-gray-400 hover:animate-pulse rounded-md cursor-pointer'>LogIn</NavLink>
+                                    
 
                                 </ul>
                             </div>

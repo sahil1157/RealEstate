@@ -17,7 +17,7 @@ const LowerComp = () => {
     }
     return (
         <div className=''>
-            <div className='sm:w-[70vw] lg:max-w-[456px] min-h-[257px] rounded-xl p-8 bg-[#C6D2E866]'>
+            <div className=' w-full min-h-[257px] rounded-xl p-8 bg-[#C6D2E866]'>
                 <div className='flex flex-col gap-8'>
                     <div className=' flex flex-col gap-3'>
                         <span className='lg:text-5xl flex-wrap flex text-4xl lg:hidden font-Oldenburg'>News Letter</span>

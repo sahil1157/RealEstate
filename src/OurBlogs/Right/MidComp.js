@@ -5,25 +5,25 @@ const MidComp = () => {
 
     const midCompMap = [
         {
-            onSale: 'Lavish bunglow on sale at.....',
+            onSale: 'Lavish bunglow on sale at Budhanilkantha',
             date: 'October 29, 2022'
         },
         {
-            onSale: 'Lavish bunglow on sale at.....',
+            onSale: 'Lavish bunglow on sale at Pokhara',
             date: 'October 29, 2022'
         },
         {
-            onSale: 'Lavish bunglow on sale at.....',
+            onSale: 'Lavish bunglow on sale at Buspark',
             date: 'October 29, 2022'
         },
         {
-            onSale: 'Lavish bunglow on sale at.....',
+            onSale: 'Lavish bunglow on sale at Bouddha',
             date: 'October 29, 2022'
         },
     ]
     return (
-        <div className='pt-8  justify-center mx-auto flex flex-col lg:gap-10 gap-8'>
-            <div className='lg:w-full rounded-xl bg-[#C6D2E866] w-full min-h-[600px] lg:min-h-[545px]'>
+        <div className='pt-8 justify-center mx-auto flex flex-col lg:gap-10 gap-8'>
+            <div className='rounded-xl bg-[#C6D2E866] w-full min-h-[600px] lg:min-h-[545px]'>
                 <div className='p-8 flex -mt-4 flex-col gap-4'>
                     <div className='flex flex-col gap-4'>
                         <span className=' text-4xl font-Oldenburg font-normal text-[#000000]'>Recent Post</span>
@@ -38,7 +38,7 @@ const MidComp = () => {
                                         </div>
                                         <div className='items-center pt-3 sm:pt-0 text-[#00000080] text-xl font-Oldenburg flex'>
                                             <div>
-                                                <p>{i.onSale}</p>
+                                                <p className='lg:w-[350px] overflow-hidden lg:whitespace-nowrap lg:text-ellipsis'>{i.onSale}</p>
                                                 <p>{i.date}</p>
                                             </div>
                                         </div>

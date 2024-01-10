@@ -1,11 +1,9 @@
+
+
 .App {
   text-align: center;
 }
-
-* {
-  min-height: 0;
-  min-width: 0;
-}
+/*  */
 
 .App-logo {
   height: 40vmin;
@@ -82,18 +80,12 @@
 
 .slick-arrow.slick-prev:hover,
 .slick-arrow.slick-next:hover {
-  color: black/* your hover color here */;
-  background-color: white /* your hover background color here */;
+  color: black;
+  background-color: white 
 }
 
 
-/* input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-} */
-
-input[type=number] {
+/* input[type=number] {
   -moz-appearance: textfield;
 }
 
@@ -105,4 +97,4 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
-}
+} */
